@@ -6,7 +6,7 @@
   height: 40vmin;
 }
 
-.App-header {
+.app {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -15,8 +15,32 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-align: start;
 }
 
 .App-link {
   color: #09d3ac;
+}
+
+.Button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: rgb(19, 145, 230);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.Button:hover {background-color: #1321a1}
+
+.Button:active {
+  background-color: #82a7ec;
+  box-shadow: 0 5px rgb(29, 21, 102);
+  transform: translateY(4px);
 }
