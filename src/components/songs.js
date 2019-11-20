@@ -78,10 +78,13 @@ class songs extends React.Component {
     
       render() {
         return (
+        
             <div>
-        <h1>Add a Song</h1>
-        <form onSubmit={this.handleSubmit}>
-        <div className='form-group'>
+       
+        <h1 className = "H1">Add a Song</h1>
+        <form onSubmit={this.handleSubmit} className="ViewSongs">
+          <div>
+        <div className='form-group' >
 
         <h4>Song Name</h4>
           <input
@@ -130,8 +133,8 @@ class songs extends React.Component {
       
 
 
-}
-      
+
+      </div>
 
         <div>
           <input
