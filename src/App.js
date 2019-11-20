@@ -2,11 +2,10 @@ import React from 'react';
 import './App.css';
 import Nav from 'react-bootstrap/Nav';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import Songs from './components/songs';
-import View from './components/view';
+import CreateSongs from './components/createsongs';
+import ReadSongs from './components/ReadSongs';
 import RecentCharts from './components/recentcharts';
 import topArtist from './components/topArtist';
-import Edit from './components/edit';
 import button from 'react-bootstrap/Button';
 
 
@@ -29,18 +28,17 @@ class App extends React.Component {
       
             <Nav className="mr-auto">
           
-              <Nav.Link href="/songs"> <button className="Button"> Add Songs</button></Nav.Link>
-              <Nav.Link href="/view"> <button className="Button"> View your music</button></Nav.Link>
-              <Nav.Link href="/edit"> <button className="Button"> Edit/delete in your library</button></Nav.Link>
+              <Nav.Link href="/createsongs"> <button className="Button"> Add Songs</button></Nav.Link>
+              <Nav.Link href="/ReadSongs"> <button className="Button"> View your music</button></Nav.Link>
               <h4> Need Inspiration? </h4>
               <Nav.Link href="/recentcharts"> <button className="Button">View the recent charts!</button></Nav.Link>
               <Nav.Link href="/topArtist"> <button className="Button">View all the most streamed artist!</button></Nav.Link>
             </Nav>
         
-            <Route path="/songs" component={Songs} />
-            <Route path="/view" component={View} />
+            <Route path="/createsongs" component={CreateSongs} />
+            <Route path="/ReadSongs" component={ReadSongs} />
             <Route path="/recentcharts" component={RecentCharts} />
-            <Route path="/edit" component={Edit} />
+            
             <Route path="/topArtist" component={topArtist} />
       </Router>
       </div>

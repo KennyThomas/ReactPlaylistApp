@@ -84,6 +84,33 @@ justify-content: center;
 
 }
 
+.DeleteButton{
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: rgb(238, 0, 0);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  font-size: large;
+  font-style: italic;
+
+
+}
+
+.DeleteButton:hover {background-color: #640502}
+
+.DeleteButton:active {
+  background-color: #e60000;
+  box-shadow: 0 5px rgb(221, 16, 16);
+  transform: translateY(4px);
+}
+
 
 
 
