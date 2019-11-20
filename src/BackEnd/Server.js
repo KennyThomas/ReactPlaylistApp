@@ -73,6 +73,19 @@ app.post('/api/Songs', (req,res)=>{
     })
 
 
+    app.put('/api/Songs/:id',(req, res)=> {
+     
+        console.log("Edit: "+req.params.id);
+        console.log(req.body);
+
+        SongModel.findByIdAndUpdate(req.params.id, req.body, {new: true},
+        (err, data)=>{
+        res.json(data);
+        })
+        })
+        
+
+
 
 
     app.get('/api/Songs/:id',(req,res)=>{

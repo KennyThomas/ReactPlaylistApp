@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-class Edit extends React.Component{
+class EditSong extends React.Component{
    
     constructor(props){
         super(props);
@@ -10,7 +10,8 @@ class Edit extends React.Component{
                       ArtistName:'',
                       SongURL:'',
                       Genre:'',
-                      Name:''
+                      Name:'',
+                      _id:''
                  
                   
                   };
@@ -29,13 +30,15 @@ class Edit extends React.Component{
 componentDidMount(){
     alert(this.props.match.params.id);
 
-    axios.get('http://localhost:4000/api/movies/'+this.props.match.params.id)
+    axios.get('http://localhost:4000/api/Songs/'+this.props.match.params.id)
     .then((response)=>{
         this.setState({
             _id:response.data._id,
-            Title:response.data.title,
-            Year:response.data.year,
-            Poster:response.data.poster
+            SongName:response.data.SongName,
+            ArtistName:response.data.ArtistName,
+            SongURL:response.data.SongURL,
+            Genre:response.data.Genre,
+            Name:response.data.Name
         })
     })
     .catch();
@@ -60,11 +63,8 @@ handleSongName(e){
     this.setState({Name: e.target.value});
   }
 
-
-
-
   handleSubmit(e){
-    alert("Song added to library");
+    alert("Song info updated");
     e.preventDefault();
 
     const newSong = {
@@ -101,7 +101,7 @@ render() {
     
         <div>
    
-    <h1 className = "H1">Add a Song</h1>
+    <h1 className = "H1">Update Song Info</h1>
     <form onSubmit={this.handleSubmit} className="ViewSongs">
       <div>
     <div className='form-group' >
@@ -158,7 +158,7 @@ render() {
 
     <div>
       <input
-      type="submit"
+      type="submit" className="Button"
       value="Update Song Info">
       </input>
     </div>
@@ -170,4 +170,4 @@ render() {
 
 
 
-export default Edit;
+export default EditSong;

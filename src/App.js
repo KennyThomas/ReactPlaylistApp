@@ -7,6 +7,7 @@ import ReadSongs from './components/ReadSongs';
 import RecentCharts from './components/recentcharts';
 import topArtist from './components/topArtist';
 import button from 'react-bootstrap/Button';
+import Edit from './components/editsong';
 
 
 
@@ -38,7 +39,7 @@ class App extends React.Component {
             <Route path="/createsongs" component={CreateSongs} />
             <Route path="/ReadSongs" component={ReadSongs} />
             <Route path="/recentcharts" component={RecentCharts} />
-            
+            <Route path="/edit/:id" component={Edit} />
             <Route path="/topArtist" component={topArtist} />
       </Router>
       </div>
