@@ -28,7 +28,9 @@ constructor(props){
           <ul>
 {songs.map(track=>  (
     
+
 <li key={track.name}>
+<div className="ViewSongs">
 <h2>Artist name</h2>
 {track.artist.name}
 <h3>Song Title</h3>
@@ -36,7 +38,7 @@ constructor(props){
 <h3>Times Streamed</h3>
 {track.playcount}
 <br></br>
-
+</div>
 
 
 

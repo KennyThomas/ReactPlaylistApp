@@ -44,3 +44,19 @@
   box-shadow: 0 5px rgb(29, 21, 102);
   transform: translateY(4px);
 }
+
+.ViewSongs{
+  
+    border: 2px solid rgb(158, 157, 165);
+    border-radius: 5px;
+    background-color: #737579;
+    font-size: large;
+    font-style: italic;
+  padding: 20px;
+  }
+
+
+
+
+
+

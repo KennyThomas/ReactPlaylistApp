@@ -7,14 +7,14 @@ class view extends React.Component{
 constructor(props){
     super(props);
    this.state = {
-        Playlists: []
+        Songs: []
     };
 }
  
     componentDidMount() {
-        axios.get('http://localhost:4000/api/PlaylistInfo')
+        axios.get('http://localhost:4000/api/Songs')
         .then((response)=>{
-            this.setState({Playlists: response.data.Playlists})
+            this.setState({Songs: response.data.Songs})
         })
         .catch((error)=>{
             console.log(error);
@@ -22,24 +22,45 @@ constructor(props){
     }
 
     render() {
-        var{Playlists} = this.state;
+       
+        var{Songs} = this.state;
+      
         return (
+
           <ul>
-{Playlists.map(playlist=>  (
-    
-<li key={playlist.id}>
-<h3>playlist created by</h3>
-{playlist.Username}
+               <h1>Your Library</h1>
+{Songs.map(song=>  (
+ 
+ <div className="ViewSongs">
+<li key={song._id}>
+
+<h3>Song Name </h3>
+{song.SongName}
 <br></br>
-<h4>Playlist</h4>
-<h5>Name</h5>
-{playlist.PlaylistName}
+
+<h3>Artist Name </h3>
+{song.ArtistName}
+<br></br>
+
+<h3>Song URL</h3>
+{song.SongURL}
+<br></br>
+
+<h3>Genre</h3>
+{song.Genre}
+<br></br>
+
+<h3>Added by </h3>
+{song.Name}
+<br></br>
+<br></br>
 
 
 
 
 </li>
 
+</div>
 ))}
           </ul>
         );

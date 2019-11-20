@@ -26,42 +26,73 @@ app.use(bodyParser.json())
 
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-    PlaylistName:String,
-    Username:String,
+const SongSchema = new Schema({
     SongName:String,
-    SongArtist:String,
-    SongURL:String
+    ArtistName:String,
+    SongURL:String,
+    Genre:String,
+    Name:String
 })
 
-const PlaylistModel = mongoose.model('Playlist', userSchema);
+const SongModel = mongoose.model('Songs', SongSchema);
 
 
 
 
-app.post('/api/PlaylistInfo', (req,res)=>{
-    console.log('Post request Successful');
-    console.log(req.body.Fname);
-    console.log(req.body.Sname);
-    console.log(req.body.username);
+app.post('/api/Songs', (req,res)=>{
+  
     
 
-    PlaylistModel.create({
-        PlaylistName:req.body.PlaylistName, 
-        Username:req.body.Username, 
-        SongName:req.body.SongName,
-        SongURL:req.body.SongURL
+    SongModel.create({
+        SongName:req.body.SongName, 
+        ArtistName:req.body.ArtistName, 
+        SongURL:req.body.SongURL,
+        Genre:req.body.Genre,
+        Name:req.body.Name
     });
 })
 
-    app.get('/api/PlaylistInfo', (req, res) => {
+    app.get('/api/Songs', (req, res) => {
 
-        PlaylistModel.find((error, data) =>{
-            res.json({Playlists:data});
+        SongModel.find((error, data) =>{
+            res.json({Songs:data});
             //console.log(data);
         })
       
     })
+
+
+    app.delete('/api/Songs/:id', (req, res)=>{
+        console.log(req.params.id);
+    
+        SongModel.deleteOne({_id: req.params.id},
+      (error,data)=>{
+          res.json(data);
+            
+            })
+    })
+
+
+
+
+    app.get('/api/Songs/:id',(req,res)=>{
+
+    console.log(req.params.id);
+    SongModel.findById(req.params.id,(error,data)=>{
+
+        res.json(data);
+
+    
+        
+        
+
+           
+        });
+    })
+    
+
+
+
 
 
 
