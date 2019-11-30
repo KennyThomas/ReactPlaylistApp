@@ -51,8 +51,8 @@ class SongItem extends React.Component {
 
 
 
-                        <button className="DeleteButton" onClick={this.DeleteSong}> Delete Movie</button>
-                        <Link to={"/edit/" + this.props.song._id} className="Button">Edit</Link> 
+                        <button className="DeleteButton" onClick={this.DeleteSong}> Delete Song</button>
+                        <Link to={"/edit/" + this.props.song._id} className="Button">Edit Song</Link> 
 
                     </ul>
                 </div>

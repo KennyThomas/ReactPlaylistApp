@@ -10,7 +10,7 @@ class ReadSongs extends React.Component {
     };
 
     componentDidMount() {
-        axios.get('http://localhost:4000/api/Songs')
+        axios.get('http://localhost:4000/api/Songs')   //reads api data
             .then((response) => {
                 this.setState({ Songs: response.data.Songs })
             })
@@ -19,7 +19,7 @@ class ReadSongs extends React.Component {
             });
     }
 
-    render() {          //outputs the songs ss
+    render() {          //outputs the songs 
         return (
 
 

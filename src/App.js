@@ -22,7 +22,7 @@ class App extends React.Component {
 
       <div className="app">
       <h1 text-allign = "top">Welcome to  the Song Center</h1>
-      <h4>Add songs to your own library<br></br>View the most recent charts</h4>
+      <h4>Add songs to your own library<br></br>View the most recent charts<br></br>View the top streamed artists </h4>
 
 
    <Router>
